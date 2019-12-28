@@ -1,0 +1,113 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>MHW Simulation</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+  <mat-card-title>
+    人物属性
+  </mat-card-title>
+  <mat-card-content >
+    <form [formGroup]='buildForm'>
+
+
+    <mat-form-field class="form-container">
+      <input matInput
+        placeholder="基础攻击"
+        type="number"
+        formControlName='attack'>
+    </mat-form-field>
+
+    <mat-form-field class="form-container">
+      <input matInput
+        placeholder="属性值"
+        type="number"
+        formControlName='element'>
+    </mat-form-field>
+
+    <mat-form-field class='form-container'>
+      <mat-label>斩味</mat-label>
+      <mat-select formControlName='sharpness'>
+        <mat-option *ngFor="let s of sharps" [value]="s">
+          {{s}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class='form-container'>
+      <mat-label>会心伤害（物理）</mat-label>
+      <mat-select formControlName='critPower'>
+        <mat-option *ngFor="let c of critPowers" [value]="c">
+          {{c}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class='form-container'>
+      <mat-label>会心伤害（属性）</mat-label>
+      <mat-select formControlName='elementCritPower'>
+        <mat-option *ngFor="let c of elementalCritPowers" [value]="c">
+          {{c}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>
+    怪物
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]='monsterForm'>
+    <mat-form-field class="form-container">
+      <input matInput
+        placeholder="属性吸收"
+        type="number"
+        formControlName='elementAbsorb'>
+    </mat-form-field>
+
+    <mat-form-field class="form-container">
+      <input matInput
+        placeholder="肉质"
+        type="number"
+        formControlName='physicalAbsorb'>
+    </mat-form-field>
+  </form>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>
+    动作
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]='actionForm'>
+    <mat-form-field class="form-container">
+      <input matInput
+        placeholder="动作值"
+        type="number"
+        formControlName='physcialPower'>
+    </mat-form-field>
+    <mat-form-field class="form-container">
+      <input matInput
+        placeholder="属性补正"
+        type="number"
+        formControlName='elementalPower'>
+    </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>
+    伤害
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item> 物理：{{physicalDamage}} </mat-list-item>
+      <mat-list-item> 属性：{{elementalDamage}} </mat-list-item>
+      <mat-list-item> 总计：{{damage}} </mat-list-item>
+     </mat-list>
+  </mat-card-content>
+</mat-card>
