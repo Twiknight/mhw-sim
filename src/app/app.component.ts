@@ -16,10 +16,10 @@ export class AppComponent {
     Sharpness.WHITE, Sharpness.PURPLE
   ];
   critPowers = [
-    1.2, 1.25, 1.3, 1.4
+    1, 1.2, 1.25, 1.3, 1.4
   ];
   elementalCritPowers = [
-    1, 1.35, 1.55
+    1, 1.25, 1.35, 1.4, 1.5, 1.55, 1.7
   ];
   title = 'mhw-sim';
 
